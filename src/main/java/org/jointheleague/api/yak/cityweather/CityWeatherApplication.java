@@ -1,4 +1,4 @@
-package org.jointheleague.api.yak.cityweather.CityWeather;
+package org.jointheleague.api.yak.cityweather;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

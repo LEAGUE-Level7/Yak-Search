@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'org.jointheleague.api.cheetah'
+group = 'org.jointheleague.api.cityweather.CityWeather'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
