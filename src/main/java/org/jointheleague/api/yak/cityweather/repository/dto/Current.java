@@ -12,11 +12,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "last_updated_epoch",
-        "last_updated",
         "temp_c",
         "temp_f",
-        "is_day",
         "condition",
         "wind_mph",
         "wind_kph",
@@ -28,8 +25,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "precip_in",
         "humidity",
         "cloud",
-        "feelslike_c",
-        "feelslike_f",
         "vis_km",
         "vis_miles",
         "uv",

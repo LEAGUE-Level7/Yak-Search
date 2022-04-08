@@ -37,6 +37,7 @@ public class CwaController {
         if(results == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Result(s) not found");
         }
+        System.out.println(results.getCurrent().getTempC());
         return results;
     }
 

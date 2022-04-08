@@ -12,9 +12,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "text",
-        "icon",
-        "code"
+        "text"
 })
 @Generated("jsonschema2pojo")
 public class Condition {
