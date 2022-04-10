@@ -30,14 +30,12 @@ public class CwaController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Result(s) found"),
             @ApiResponse(code = 404, message = "Result(s) not found")
-
     })
     public WeatherInfo getResults(@RequestParam(value="q") String query){
         WeatherInfo results = cwaService.getResults(query);
         if(results == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Result(s) not found");
         }
-        System.out.println(results.getCurrent().getTempC());
         return results;
     }
 
