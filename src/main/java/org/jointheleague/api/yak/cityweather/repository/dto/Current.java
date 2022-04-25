@@ -3,14 +3,11 @@ package org.jointheleague.api.yak.cityweather.repository.dto;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"feelslike_f", "feelslike_c", "last_updated", "last_updated_epoch", "is_day"})
 @JsonPropertyOrder({
         "temp_c",
         "temp_f",
