@@ -18,6 +18,10 @@ public class CwaRepository {
                 .build();
     }
 
+    public CwaRepository(WebClient webClient){
+        this.webClient = webClient;
+    }
+
     public WeatherInfo getResults(String query){
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder

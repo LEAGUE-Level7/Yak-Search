@@ -9,8 +9,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.web.server.ResponseStatusException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 class CwaControllerTest {
     CwaController cwac;
@@ -25,7 +27,7 @@ class CwaControllerTest {
     }
 
     @Test
-    void givenCityName_whenGetResults_thenReturnWeatherInfo() {
+    void givenGoodCityNameQuery_whenGetResults_thenReturnWeatherInfo() {
         //given
         String query = "San Diego";
         WeatherInfo weatherInfo = new WeatherInfo();
@@ -70,7 +72,20 @@ class CwaControllerTest {
         when(cwas.getResults(query)).thenReturn(weatherInfo);
 
         //when
+        WeatherInfo actualResult = cwac.getResults(query);
 
         //then
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void givenBadCityQuery_whenGetResults_thenThrowsException(){
+        //given
+        String query = "Sus Village";
+
+        //when
+        //then
+        Throwable exceptionThrown = assertThrows(ResponseStatusException.class, () -> cwac.getResults(query));
+        assertEquals(exceptionThrown.getMessage(), "404 NOT_FOUND \"Result(s) not found\"");
     }
 }
