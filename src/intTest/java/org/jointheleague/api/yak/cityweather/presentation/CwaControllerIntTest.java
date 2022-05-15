@@ -143,7 +143,7 @@ public class CwaControllerIntTest {
 
         //when
         //then
-        mockMvc.perform(get("/searchCityWeather?= " + query))
+        mockMvc.perform(get("/searchCityWeather?q= " + query))
                 .andDo(print())
                 .andExpect(status().isNotFound());
     }
