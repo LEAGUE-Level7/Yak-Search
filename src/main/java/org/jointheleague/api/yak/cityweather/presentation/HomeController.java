@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class HomeController {
 
     @GetMapping("/")
+    @CrossOrigin()
     @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
     public String home(){
         return "redirect:swagger-ui.html";

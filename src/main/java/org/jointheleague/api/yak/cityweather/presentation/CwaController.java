@@ -7,6 +7,7 @@ import org.jointheleague.api.yak.cityweather.repository.dto.WeatherInfo;
 import org.jointheleague.api.yak.cityweather.service.CwaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ public class CwaController {
     }
 
     @GetMapping("/searchCityWeather")
+    @CrossOrigin()
     @ApiOperation(value = "Gets the current weather at the city matching the search term.",
                     notes = "Returns an object containing the requested weather information.",
                     response = WeatherInfo.class
